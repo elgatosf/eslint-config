@@ -1,0 +1,42 @@
+{
+    "name": "@elgato/eslint-config",
+    "version": "0.0.0",
+    "description": "ESLint configuration used by Elgato projects.",
+    "type": "module",
+    "main": "src/index.js",
+    "files": [
+        "src/"
+    ],
+    "scripts": {
+        "lint": "eslint --max-warnings 0",
+        "lint:fix": "prettier \"./src/**/*.js\" --write"
+    },
+    "prettier": "@elgato/prettier-config",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/elgatosf/eslint-config.git"
+    },
+    "keywords": [
+        "elgato",
+        "eslint"
+    ],
+    "author": {
+        "name": "Elgato",
+        "url": "https://www.elgato.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/elgatosf/eslint-config/issues"
+    },
+    "homepage": "https://github.com/elgatosf/eslint-config#readme",
+    "devDependencies": {
+        "@elgato/prettier-config": "^0.2.6"
+    },
+    "peerDependencies": {
+        "@eslint/js": "^9.26.0",
+        "eslint": "^9.26.0",
+        "eslint-plugin-jsdoc": "^50.6.14",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.32.0"
+    }
+}
