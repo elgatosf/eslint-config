@@ -45,8 +45,8 @@ The `recommended` configuration is catered for TypeScript, and enforces stricter
 | JSDoc: Check tag names                     | ⚠️ Warn  |                                                 |
 | JSDoc: No undefined types                  | ⚠️ Warn  |                                                 |
 | JSDoc: Require JSDoc                       | ⚠️ Warn  |                                                 |
-| TypeScript: Explicit member accessibility  | ⚠️ Warn  | No `public` required `constructor`.             |
 | TypeScript: Explicit function return types | ⚠️ Warn  | Disabled for JavaScript, tests, and mock files. |
+| TypeScript: Explicit member accessibility  | ⚠️ Warn  | No `public` required `constructor`.             |
 | TypeScript: Member ordering                | ⚠️ Warn  | Grouped by type, sub-grouped by accessibility.  |
 | TypeScript: Sort type contituents          | ⚠️ Warn  |                                                 |
 

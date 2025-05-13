@@ -1,4 +1,4 @@
-import recommended from "./config/recommended.js";
+import recommended from "./recommended.js";
 
 /**
  * ESLint configuration.
