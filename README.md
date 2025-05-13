@@ -10,15 +10,15 @@
 
 </div>
 
-## Usage
-
-1. Install `@elgato/eslint-config`.
+## Installation
 
 ```
 npm install @elgato/eslint-config --save-dev
 ```
 
-2. Create an `eslint.config.js` file at the root of your project.
+## Usage
+
+Create an `eslint.config.js` file at the root of your project.
 
 ```js
 // eslint.config.js
@@ -26,6 +26,18 @@ import { config } from "@elgato/eslint-config";
 
 export default config.recommended;
 ```
+
+Then add a linting script to your `package.json` file.
+
+```json
+{
+    "scripts": {
+        "lint": "eslint --max-warnings 0"
+    }
+}
+```
+
+Finally, to test everything is working run `npm run lint`.
 
 ## Configuration
 
