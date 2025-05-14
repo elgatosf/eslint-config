@@ -1,6 +1,6 @@
 {
     "name": "@elgato/eslint-config",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "ESLint configuration used by Elgato projects.",
     "type": "module",
     "main": "src/index.js",
