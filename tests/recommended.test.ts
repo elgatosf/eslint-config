@@ -34,7 +34,7 @@ describe("recommended", () => {
 		},
 	])("$ruleId", async ({ ruleId, messages }) => {
 		// Arrange.
-		const files = [join("./src/__tests__/recommended/", `${ruleId}.ts`)];
+		const files = [join("./tests/recommended/", `${ruleId}.ts`)];
 		const eslint = new ESLint({
 			overrideConfigFile: "src/recommended.js",
 		});

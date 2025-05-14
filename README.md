@@ -51,16 +51,16 @@ The `recommended` configuration is catered for TypeScript, and enforces stricter
 
 ### Rules
 
-| Rule                                       | Severity | Notes                                           |
-| ------------------------------------------ | -------- | ----------------------------------------------- |
-| Indent: Tabs                               | ⚠️ Warn  |                                                 |
-| JSDoc: Check tag names                     | ⚠️ Warn  |                                                 |
-| JSDoc: No undefined types                  | ⚠️ Warn  |                                                 |
-| JSDoc: Require JSDoc                       | ⚠️ Warn  |                                                 |
-| TypeScript: Explicit function return types | ⚠️ Warn  | Disabled for JavaScript, tests, and mock files. |
-| TypeScript: Explicit member accessibility  | ⚠️ Warn  | No `public` required `constructor`.             |
-| TypeScript: Member ordering                | ⚠️ Warn  | Grouped by type, sub-grouped by accessibility.  |
-| TypeScript: Sort type contituents          | ⚠️ Warn  |                                                 |
+| Rule                                       | Severity | Notes                                                         |
+| ------------------------------------------ | -------- | ------------------------------------------------------------- |
+| Indent: Tabs                               | ⚠️ Warn  |                                                               |
+| JSDoc: Check tag names                     | ⚠️ Warn  |                                                               |
+| JSDoc: No undefined types                  | ⚠️ Warn  |                                                               |
+| JSDoc: Require JSDoc                       | ⚠️ Warn  |                                                               |
+| TypeScript: Explicit function return types | ⚠️ Warn  | Disabled for JavaScript, tests, and mock files.               |
+| TypeScript: Explicit member accessibility  | ⚠️ Warn  | No `public` required `constructor`.                           |
+| TypeScript: Member ordering                | ⚠️ Warn  | Grouped by type and then access, and ordered alphabetically . |
+| TypeScript: Sort type contituents          | ⚠️ Warn  |                                                               |
 
 Additionally, the following rules are disabled for test and mock files:
 
@@ -83,7 +83,7 @@ Additionally, the following rules are disabled for test and mock files:
 
 ## Member Ordering
 
-Members of a class should be grouped by type, and then sub-grouped within those types by accessibility. The orders are as follows:
+Members of a class should be grouped by type and then by access, and ordered alphabetically. The ordersing is as follows:
 
 **Type Order**
 
@@ -93,7 +93,7 @@ Members of a class should be grouped by type, and then sub-grouped within those 
 - Properties (get / set)
 - Methods
 
-**Accessibility Order**
+**Access Order**
 
 - Public (static / abstract / regular)
 - Protected (static / abstract / regular)

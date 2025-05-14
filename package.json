@@ -10,6 +10,7 @@
     "scripts": {
         "lint": "eslint --max-warnings 0",
         "lint:fix": "prettier \"./src/**/*.js\" --write",
+        "preversion": "npm run lint && npm test",
         "test": "vitest run",
         "test:watch": "vitest"
     },
@@ -20,7 +21,8 @@
     },
     "keywords": [
         "elgato",
-        "eslint"
+        "eslint",
+        "linting"
     ],
     "author": {
         "name": "Elgato",

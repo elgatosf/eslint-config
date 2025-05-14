@@ -4,7 +4,7 @@ import { config } from "./src/index.js";
 
 export default defineConfig([
 	{
-		ignores: ["src/__tests__/recommended/**/*.ts"],
+		ignores: ["tests/recommended/**/*.ts"],
 		extends: config.recommended,
 	},
 ]);
