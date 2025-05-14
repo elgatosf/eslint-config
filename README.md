@@ -2,7 +2,7 @@
 
 # @elgato/eslint-config
 
-[ESLint](https://https://eslint.org/.io/) configuration used by Elgato projects.
+[ESLint](https://https://eslint.org/) configuration used by Elgato projects.
 
 [![@elgato/eslint-config npm package](https://img.shields.io/npm/v/%40elgato/eslint-config?logo=npm&logoColor=white)](https://www.npmjs.com/package/@elgato/eslint-config)
 [![Join the Marketplace Makers Discord](https://img.shields.io/badge/Marketplace%20Makers-5662f6?labelColor=grey&logo=discord&logoColor=white)](https://discord.gg/GehBUcu627)
@@ -51,16 +51,16 @@ The `recommended` configuration is catered for TypeScript, and enforces stricter
 
 ### Rules
 
-| Rule                                       | Severity | Notes                                                         |
-| ------------------------------------------ | -------- | ------------------------------------------------------------- |
-| Indent: Tabs                               | ⚠️ Warn  |                                                               |
-| JSDoc: Check tag names                     | ⚠️ Warn  |                                                               |
-| JSDoc: No undefined types                  | ⚠️ Warn  |                                                               |
-| JSDoc: Require JSDoc                       | ⚠️ Warn  |                                                               |
-| TypeScript: Explicit function return types | ⚠️ Warn  | Disabled for JavaScript, tests, and mock files.               |
-| TypeScript: Explicit member accessibility  | ⚠️ Warn  | No `public` required `constructor`.                           |
-| TypeScript: Member ordering                | ⚠️ Warn  | Grouped by type and then access, and ordered alphabetically . |
-| TypeScript: Sort type contituents          | ⚠️ Warn  |                                                               |
+| Rule                                       | Severity     | Notes                                                        |
+| ------------------------------------------ | ------------ | ------------------------------------------------------------ |
+| Indent: Tabs                               | ⚠️&nbsp;Warn |                                                              |
+| JSDoc: Check tag names                     | ⚠️&nbsp;Warn |                                                              |
+| JSDoc: No undefined types                  | ⚠️&nbsp;Warn |                                                              |
+| JSDoc: Require JSDoc                       | ⚠️&nbsp;Warn |                                                              |
+| TypeScript: Explicit function return types | ⚠️&nbsp;Warn | Disabled for JavaScript, tests, and mock files.              |
+| TypeScript: Explicit member accessibility  | ⚠️&nbsp;Warn | No `public` required `constructor`.                          |
+| TypeScript: Member ordering                | ⚠️&nbsp;Warn | Grouped by type and then access, and ordered alphabetically. |
+| TypeScript: Sort type constituents         | ⚠️&nbsp;Warn |                                                              |
 
 Additionally, the following rules are disabled for test and mock files:
 
@@ -83,7 +83,7 @@ Additionally, the following rules are disabled for test and mock files:
 
 ## Member Ordering
 
-Members of a class should be grouped by type and then by access, and ordered alphabetically. The ordersing is as follows:
+Members of a class should be grouped by type and then by access, and ordered alphabetically. The ordering is as follows:
 
 **Type Order**
 
