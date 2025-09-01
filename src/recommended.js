@@ -52,6 +52,11 @@ export default defineConfig([
 					SwitchCase: 1,
 				},
 			],
+
+			/**
+			 * jsdoc
+			 */
+
 			"jsdoc/check-tag-names": [
 				"warn",
 				{
@@ -73,6 +78,17 @@ export default defineConfig([
 					],
 				},
 			],
+			"jsdoc/require-returns": [
+				"warn",
+				{
+					checkGetters: false,
+				},
+			],
+
+			/**
+			 * typescript-eslint
+			 */
+
 			"@typescript-eslint/explicit-member-accessibility": [
 				"warn",
 				{

@@ -3,10 +3,16 @@ import { join } from "path";
 import { describe, expect, test } from "vitest";
 
 export const recommendedRules = [
+	/**
+	 * Built-in
+	 */
 	{
 		ruleId: "indent",
 		messages: ["Expected indentation of 1 tab but found 4 spaces."],
 	},
+	/**
+	 * jsdoc
+	 */
 	{
 		ruleId: "jsdoc/check-tag-names",
 		messages: ['Invalid JSDoc tag name "custom".'],
@@ -19,6 +25,13 @@ export const recommendedRules = [
 		ruleId: "jsdoc/require-jsdoc",
 		messages: ["Missing JSDoc comment."],
 	},
+	{
+		ruleId: "jsdoc/require-returns",
+		messages: ["Missing JSDoc @returns declaration."],
+	},
+	/**
+	 * typescript-eslint
+	 */
 	{
 		ruleId: "@typescript-eslint/explicit-function-return-type",
 		messages: [],
