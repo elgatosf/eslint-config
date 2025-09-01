@@ -55,7 +55,7 @@ export default defineConfig([
 			"jsdoc/check-tag-names": [
 				"warn",
 				{
-					definedTags: ["jest-environment"],
+					definedTags: ["csspart", "cssproperty", "jest-environment", "slot"],
 				},
 			],
 			"jsdoc/no-undefined-types": "warn",
