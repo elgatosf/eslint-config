@@ -41,6 +41,11 @@ Finally, to test everything is working run `npm run lint`.
 
 ## Configuration
 
+There are two configurations available:
+
+- Recommended — `config.recommended`
+- Strict — `config.strict` (stricter type enforcing)
+
 All configurations are tailored for TypeScript, with the `strict` configuration enforcing stricter types through explicit return types. Additionally, all configurations emphasize the importance of well-documented code ([jsdocs](https://jsdoc.app/)) and encourages structured code in the form of member ordering.
 
 ### Extends
