@@ -41,7 +41,7 @@ Finally, to test everything is working run `npm run lint`.
 
 ## Configuration
 
-The `recommended` configuration is catered for TypeScript, and enforces stricter types through explicit return types and no `any`, amongst other rules. Additionally, the configuration emphasizes the importance of well-documented code ([jsdocs](https://jsdoc.app/)) and encourages structured code in the form of member ordering.
+All configurations are tailored for TypeScript, with the `strict` configuration enforcing stricter types through explicit return types. Additionally, all configurations emphasize the importance of well-documented code ([jsdocs](https://jsdoc.app/)) and encourages structured code in the form of member ordering.
 
 ### Extends
 
@@ -51,16 +51,17 @@ The `recommended` configuration is catered for TypeScript, and enforces stricter
 
 ### Rules
 
-| Rule                                       | Severity     | Notes                                                        |
-| ------------------------------------------ | ------------ | ------------------------------------------------------------ |
-| Indent: Tabs                               | ⚠️&nbsp;Warn |                                                              |
-| JSDoc: Check tag names                     | ⚠️&nbsp;Warn |                                                              |
-| JSDoc: No undefined types                  | ⚠️&nbsp;Warn |                                                              |
-| JSDoc: Require JSDoc                       | ⚠️&nbsp;Warn |                                                              |
-| TypeScript: Explicit function return types | ⚠️&nbsp;Warn | Disabled for JavaScript, tests, and mock files.              |
-| TypeScript: Explicit member accessibility  | ⚠️&nbsp;Warn | No `public` required `constructor`.                          |
-| TypeScript: Member ordering                | ⚠️&nbsp;Warn | Grouped by type and then access, and ordered alphabetically. |
-| TypeScript: Sort type constituents         | ⚠️&nbsp;Warn |                                                              |
+| Rule                                       | Recommended  | Strict       | Notes                                                                 |
+| ------------------------------------------ | ------------ | ------------ | --------------------------------------------------------------------- |
+| Indent: Tabs                               | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn |                                                                       |
+| JSDoc: Check tag names                     | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn | Additional tags: `csspart`, `cssproperty`, `jest-environment`, `slot` |
+| JSDoc: No undefined types                  | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn |                                                                       |
+| JSDoc: Require JSDoc                       | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn |                                                                       |
+| JSDoc: Require Returns                     | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn | Disabled for getters.                                                 |
+| TypeScript: Explicit function return types | ✅ Off       | ⚠️&nbsp;Warn | Disabled for JavaScript, tests, and mock files.                       |
+| TypeScript: Explicit member accessibility  | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn | No `public` required `constructor`.                                   |
+| TypeScript: Member ordering                | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn | Grouped by type and then access, and ordered alphabetically.          |
+| TypeScript: Sort type constituents         | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn |                                                                       |
 
 Additionally, the following rules are disabled for test and mock files:
 
