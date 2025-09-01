@@ -73,7 +73,6 @@ export default defineConfig([
 					],
 				},
 			],
-			"@typescript-eslint/explicit-function-return-type": "warn",
 			"@typescript-eslint/explicit-member-accessibility": [
 				"warn",
 				{
