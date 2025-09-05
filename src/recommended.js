@@ -52,10 +52,15 @@ export default defineConfig([
 					SwitchCase: 1,
 				},
 			],
+
+			/**
+			 * jsdoc
+			 */
+
 			"jsdoc/check-tag-names": [
 				"warn",
 				{
-					definedTags: ["jest-environment"],
+					definedTags: ["csspart", "cssproperty", "jest-environment", "slot"],
 				},
 			],
 			"jsdoc/no-undefined-types": "warn",
@@ -73,7 +78,17 @@ export default defineConfig([
 					],
 				},
 			],
-			"@typescript-eslint/explicit-function-return-type": "warn",
+			"jsdoc/require-returns": [
+				"warn",
+				{
+					checkGetters: false,
+				},
+			],
+
+			/**
+			 * typescript-eslint
+			 */
+
 			"@typescript-eslint/explicit-member-accessibility": [
 				"warn",
 				{

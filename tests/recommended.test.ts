@@ -2,39 +2,54 @@ import { ESLint } from "eslint";
 import { join } from "path";
 import { describe, expect, test } from "vitest";
 
+export const recommendedRules = [
+	/**
+	 * Built-in
+	 */
+	{
+		ruleId: "indent",
+		messages: ["Expected indentation of 1 tab but found 4 spaces."],
+	},
+	/**
+	 * jsdoc
+	 */
+	{
+		ruleId: "jsdoc/check-tag-names",
+		messages: ['Invalid JSDoc tag name "custom".'],
+	},
+	{
+		ruleId: "jsdoc/no-undefined-types",
+		messages: ["The type 'world' is undefined."],
+	},
+	{
+		ruleId: "jsdoc/require-jsdoc",
+		messages: ["Missing JSDoc comment."],
+	},
+	{
+		ruleId: "jsdoc/require-returns",
+		messages: ["Missing JSDoc @returns declaration."],
+	},
+	/**
+	 * typescript-eslint
+	 */
+	{
+		ruleId: "@typescript-eslint/explicit-function-return-type",
+		messages: [],
+	},
+	{
+		ruleId: "@typescript-eslint/explicit-member-accessibility",
+		messages: ["Missing accessibility modifier on method definition test."],
+	},
+	{
+		ruleId: "@typescript-eslint/sort-type-constituents",
+		messages: ["Union type Test constituents must be sorted."],
+	},
+];
+
 describe("recommended", () => {
-	test.each([
-		{
-			ruleId: "indent",
-			messages: ["Expected indentation of 1 tab but found 4 spaces."],
-		},
-		{
-			ruleId: "jsdoc/check-tag-names",
-			messages: ['Invalid JSDoc tag name "custom".'],
-		},
-		{
-			ruleId: "jsdoc/no-undefined-types",
-			messages: ["The type 'world' is undefined."],
-		},
-		{
-			ruleId: "jsdoc/require-jsdoc",
-			messages: ["Missing JSDoc comment."],
-		},
-		{
-			ruleId: "@typescript-eslint/explicit-function-return-type",
-			messages: ["Missing return type on function."],
-		},
-		{
-			ruleId: "@typescript-eslint/explicit-member-accessibility",
-			messages: ["Missing accessibility modifier on method definition test."],
-		},
-		{
-			ruleId: "@typescript-eslint/sort-type-constituents",
-			messages: ["Union type Test constituents must be sorted."],
-		},
-	])("$ruleId", async ({ ruleId, messages }) => {
+	test.each(recommendedRules)("$ruleId", async ({ ruleId, messages }) => {
 		// Arrange.
-		const files = [join("./tests/recommended/", `${ruleId}.ts`)];
+		const files = [join("./tests/rules/", `${ruleId}.ts`)];
 		const eslint = new ESLint({
 			overrideConfigFile: "src/recommended.js",
 		});

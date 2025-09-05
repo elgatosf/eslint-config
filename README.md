@@ -6,7 +6,7 @@
 
 [![@elgato/eslint-config npm package](https://img.shields.io/npm/v/%40elgato/eslint-config?logo=npm&logoColor=white)](https://www.npmjs.com/package/@elgato/eslint-config)
 [![Join the Marketplace Makers Discord](https://img.shields.io/badge/Marketplace%20Makers-5662f6?labelColor=grey&logo=discord&logoColor=white)](https://discord.gg/GehBUcu627)
-[![Elgato homepage](https://img.shields.io/badge/Elgato-3431cf?labelColor=grey&logo=data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+RWxnYXRvPC90aXRsZT48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJtMTMuODgxOCA4LjM5NjQuMDI2MS4wMTk2IDkuOTQ5NCA1LjcxNzJjLS40ODg0IDIuNzI5LTEuOTE5NiA1LjIyMjMtNC4wMzg0IDcuMDI1M0ExMS45MjYyIDExLjkyNjIgMCAwIDEgMTIuMDk3IDI0Yy0zLjE5MjUgMC02LjE5MzktMS4yNDc3LTguNDUyNy0zLjUxNDRDMS4zODY4IDE4LjIxODguMTQyNyAxNS4yMDQ0LjE0MjcgMTJjMC0zLjIwNDIgMS4yNDQtNi4yMTg3IDMuNTAxNS04LjQ4NTRDNS45MDE5IDEuMjQ4IDguOTAzMiAwIDEyLjA5NyAwYzIuNDM5NCAwIDQuNzg0Ny43MzMzIDYuNzgzIDIuMTE4NyAxLjk1MjYgMS4zNTQgMy40NDY2IDMuMjM1NyA0LjMyMjcgNS40NDIyLjExMTIuMjgyOS4yMTQ5LjU3MzYuMzA1MS44NjU3bC0yLjEyNTUgMS4yMzU5YTkuNDkyNCA5LjQ5MjQgMCAwIDAtLjI2MTktLjg2OTRjLTEuMzU0LTMuODMwMy00Ljk4MTMtNi40MDQ4LTkuMDIzNy02LjQwNDhDNi44MTcxIDIuMzg4MyAyLjUyMiA2LjcwMDUgMi41MjIgMTJjMCA1LjI5OTUgNC4yOTUgOS42MTE1IDkuNTc0OCA5LjYxMTUgMi4wNTIgMCA0LjAwODQtLjY0NDIgNS42NTk2LTEuODY0NyAxLjYxNzItMS4xOTU1IDIuODAzNi0yLjgzMzcgMy40MzA5LTQuNzM2NGwuMDA2NS0uMDQxOUw5LjU5MDYgOC4zMDQ4djcuMjI1Nmw0LjAwMDQtMi4zMTM4IDIuMDYgMS4xODExLTUuOTk2MiAzLjQ2ODgtMi4xMi0xLjIxMjZWNy4xOTQzbDIuMTE3NC0xLjIyNDUgNC4yMzA5IDIuNDI3OS0uMDAxMy0uMDAxMyIvPjwvc3ZnPg==)](https://elgato.com)
+[![Elgato homepage](https://img.shields.io/badge/Elgato-3431cf?labelColor=grey&logo=elgato)](https://elgato.com)
 
 </div>
 
@@ -41,7 +41,12 @@ Finally, to test everything is working run `npm run lint`.
 
 ## Configuration
 
-The `recommended` configuration is catered for TypeScript, and enforces stricter types through explicit return types and no `any`, amongst other rules. Additionally, the configuration emphasizes the importance of well-documented code ([jsdocs](https://jsdoc.app/)) and encourages structured code in the form of member ordering.
+There are two configurations available:
+
+- Recommended — `config.recommended`
+- Strict — `config.strict` (stricter type enforcing)
+
+All configurations are tailored for TypeScript, with the `strict` configuration enforcing stricter types through explicit return types. Additionally, all configurations emphasize the importance of well-documented code ([jsdocs](https://jsdoc.app/)) and encourages structured code in the form of member ordering.
 
 ### Extends
 
@@ -51,16 +56,17 @@ The `recommended` configuration is catered for TypeScript, and enforces stricter
 
 ### Rules
 
-| Rule                                       | Severity     | Notes                                                        |
-| ------------------------------------------ | ------------ | ------------------------------------------------------------ |
-| Indent: Tabs                               | ⚠️&nbsp;Warn |                                                              |
-| JSDoc: Check tag names                     | ⚠️&nbsp;Warn |                                                              |
-| JSDoc: No undefined types                  | ⚠️&nbsp;Warn |                                                              |
-| JSDoc: Require JSDoc                       | ⚠️&nbsp;Warn |                                                              |
-| TypeScript: Explicit function return types | ⚠️&nbsp;Warn | Disabled for JavaScript, tests, and mock files.              |
-| TypeScript: Explicit member accessibility  | ⚠️&nbsp;Warn | No `public` required `constructor`.                          |
-| TypeScript: Member ordering                | ⚠️&nbsp;Warn | Grouped by type and then access, and ordered alphabetically. |
-| TypeScript: Sort type constituents         | ⚠️&nbsp;Warn |                                                              |
+| Rule                                       | Recommended  | Strict       | Notes                                                                 |
+| ------------------------------------------ | ------------ | ------------ | --------------------------------------------------------------------- |
+| Indent: Tabs                               | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn |                                                                       |
+| JSDoc: Check tag names                     | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn | Additional tags: `csspart`, `cssproperty`, `jest-environment`, `slot` |
+| JSDoc: No undefined types                  | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn |                                                                       |
+| JSDoc: Require JSDoc                       | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn |                                                                       |
+| JSDoc: Require Returns                     | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn | Disabled for getters.                                                 |
+| TypeScript: Explicit function return types | ✅ Off       | ⚠️&nbsp;Warn | Disabled for JavaScript, tests, and mock files.                       |
+| TypeScript: Explicit member accessibility  | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn | No `public` required `constructor`.                                   |
+| TypeScript: Member ordering                | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn | Grouped by type and then access, and ordered alphabetically.          |
+| TypeScript: Sort type constituents         | ⚠️&nbsp;Warn | ⚠️&nbsp;Warn |                                                                       |
 
 Additionally, the following rules are disabled for test and mock files:
 
