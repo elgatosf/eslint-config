@@ -9,7 +9,7 @@ import tsEslint from "typescript-eslint";
  */
 export default defineConfig([
 	/**
-	 * Default ignores.
+	 * Global (ignore).
 	 */
 	{
 		ignores: [
@@ -21,74 +21,22 @@ export default defineConfig([
 	},
 
 	/**
-	 * External library configurations.
+	 * Global (recommended).
 	 */
 	{
-		extends: [
-			jsdoc.configs["flat/recommended-typescript"],
-			eslint.configs.recommended,
-			tsEslint.configs.recommended,
-		],
+		extends: [eslint.configs.recommended],
 	},
 
 	/**
-	 * Main rules.
+	 * TypeScript.
 	 */
 	{
-		plugins: {
-			jsdoc,
-		},
-		languageOptions: {
-			globals: {
-				...globals.node,
-			},
-		},
+		files: ["**/*.{ts,mts,cts,tsx}"],
+		extends: [
+			jsdoc.configs["flat/recommended-typescript"],
+			tsEslint.configs.recommended,
+		],
 		rules: {
-			indent: [
-				"warn",
-				"tab",
-				{
-					ignoredNodes: ["TemplateLiteral *"],
-					SwitchCase: 1,
-				},
-			],
-
-			/**
-			 * jsdoc
-			 */
-
-			"jsdoc/check-tag-names": [
-				"warn",
-				{
-					definedTags: ["csspart", "cssproperty", "jest-environment", "slot"],
-				},
-			],
-			"jsdoc/no-undefined-types": "warn",
-			"jsdoc/require-jsdoc": [
-				"warn",
-				{
-					contexts: [
-						"ClassDeclaration",
-						"PropertyDefinition",
-						"MethodDefinition",
-						"TSEnumDeclaration",
-						"TSEnumMember",
-						"TSPropertySignature",
-						"TSTypeAliasDeclaration",
-					],
-				},
-			],
-			"jsdoc/require-returns": [
-				"warn",
-				{
-					checkGetters: false,
-				},
-			],
-
-			/**
-			 * typescript-eslint
-			 */
-
 			"@typescript-eslint/explicit-member-accessibility": [
 				"warn",
 				{
@@ -151,18 +99,66 @@ export default defineConfig([
 	},
 
 	/**
-	 * JavaScript-only rules.
+	 * JavaScript.
 	 */
 	{
-		files: ["**/*.{js,cjs,mjs}"],
+		files: ["**/*.{js,mjs,cjs,jsx}"],
+		extends: [
+			jsdoc.configs["flat/recommended"],
+			eslint.configs.recommended,
+		],
+	},
+
+	/**
+	 * Global (overrides).
+	 */
+	{
+		languageOptions: {
+			globals: {
+				...globals.node,
+			},
+		},
 		rules: {
-			"@typescript-eslint/explicit-function-return-type": "off",
-			"jsdoc/no-types": "off",
+			indent: [
+				"warn",
+				"tab",
+				{
+					ignoredNodes: ["TemplateLiteral *"],
+					SwitchCase: 1,
+				},
+			],
+			"jsdoc/check-tag-names": [
+				"warn",
+				{
+					definedTags: ["csspart", "cssproperty", "jest-environment", "slot"],
+				},
+			],
+			"jsdoc/no-undefined-types": "warn",
+			"jsdoc/require-jsdoc": [
+				"warn",
+				{
+					contexts: [
+						"ClassDeclaration",
+						"PropertyDefinition",
+						"MethodDefinition",
+						"TSEnumDeclaration",
+						"TSEnumMember",
+						"TSPropertySignature",
+						"TSTypeAliasDeclaration",
+					],
+				},
+			],
+			"jsdoc/require-returns": [
+				"warn",
+				{
+					checkGetters: false,
+				},
+			],
 		},
 	},
 
 	/**
-	 * Test and mock rules.
+	 * Tests and mocks.
 	 */
 	{
 		files: ["{src,tests}/**/__mocks__/*.ts", "{src,tests}/**/__tests__/*test.ts"],
