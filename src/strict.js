@@ -9,9 +9,10 @@ export default defineConfig([
 	recommendedConfig,
 
 	/**
-	 * Main rules.
+	 * TypeScript.
 	 */
 	{
+		files: ["**/*.{ts,mts,cts,tsx}"],
 		rules: {
 			"@typescript-eslint/explicit-function-return-type": "warn",
 		},
