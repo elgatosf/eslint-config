@@ -105,7 +105,6 @@ export default defineConfig([
 		files: ["**/*.{js,mjs,cjs,jsx}"],
 		extends: [
 			jsdoc.configs["flat/recommended"],
-			eslint.configs.recommended,
 		],
 	},
 
