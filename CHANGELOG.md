@@ -11,6 +11,12 @@
 
 # Change Log
 
+## 0.3.0
+
+### 🐞 Fix
+
+- Fix support for projects with both JavaScript and TypeScript files.
+
 ## 0.2.0
 
 ### ✨ New
