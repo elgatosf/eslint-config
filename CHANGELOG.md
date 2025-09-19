@@ -11,6 +11,12 @@
 
 # Change Log
 
+## 0.3.1
+
+### 🐞 Fix
+
+- Bump dependencies.
+
 ## 0.3.0
 
 ### 🐞 Fix
